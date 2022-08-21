@@ -28,3 +28,6 @@ hs_err_pid*
 # Idea and compiled files
 jee_web_app/.idea/
 jee_web_app/target/
+
+#tomcat folder
+tomcat/

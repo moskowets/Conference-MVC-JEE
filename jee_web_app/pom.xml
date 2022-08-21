@@ -69,7 +69,7 @@
           <artifactId>maven-war-plugin</artifactId>
           <version>3.2.2</version>
           <configuration>
-            <outputDirectory>C:\epam\tomcat\server\apache-tomcat-9.0.64\webapps</outputDirectory>
+            <outputDirectory>C:\Users\Pavlo\git\github\Conference-MVC-JEE\tomcat\apache-tomcat-9.0.65\webapps</outputDirectory>
           </configuration>
         </plugin>
         <plugin>
