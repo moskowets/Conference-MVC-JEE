@@ -9,9 +9,9 @@
   <version>0.01</version>
   <packaging>war</packaging>
 
-  <name>conference Maven Webapp</name>
+  <name>Conference JEE MVC App</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>http://mktcode.eu</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
