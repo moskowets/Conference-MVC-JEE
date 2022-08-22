@@ -1,4 +1,4 @@
-package eu.mktcode.app.datasource.database.mysql;
+package eu.mktcode.app.datasource.database;
 
 import java.sql.Connection;
 import java.util.Deque;
