@@ -1,6 +1,7 @@
 package eu.mktcode.app.datasource.database;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Deque;
 
 
@@ -17,7 +18,7 @@ public class PooledConnection implements AutoCloseable {
     }
 
     @Override
-    public void close() throws Exception {
+    public void close() throws SQLException {
         pool.push(connection);
     }
 }

@@ -24,12 +24,13 @@ public class ConnectionPool {
         return pool;
     }
     private ConnectionPool() {
+
         for (int i = 0; i < Properties.getPoolSize(); i++) {
             connectionPool.push(createConnection());
         }
     }
 
-    public PooledConnection getConnection() {
+    public synchronized PooledConnection getConnection() {
         while (connectionPool.size() == 0) {
             try {
                 Thread.sleep(WAITING_TIME);
@@ -50,6 +51,11 @@ public class ConnectionPool {
 
     private Connection createConnection() {
         try {
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
             return DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             //TODO logging
