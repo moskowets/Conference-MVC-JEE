@@ -52,6 +52,7 @@ public class ConnectionPool {
     private Connection createConnection() {
         try {
             try {
+                //TODO add string to app.properties
                 Class.forName("com.mysql.cj.jdbc.Driver");
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
