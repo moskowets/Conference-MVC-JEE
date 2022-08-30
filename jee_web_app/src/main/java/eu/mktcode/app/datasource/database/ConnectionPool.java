@@ -30,7 +30,7 @@ public class ConnectionPool {
         }
     }
 
-    public synchronized PooledConnection getConnection() {
+    public synchronized PooledConnection getPooledConnection() {
         while (connectionPool.size() == 0) {
             try {
                 Thread.sleep(WAITING_TIME);
@@ -60,6 +60,20 @@ public class ConnectionPool {
         } catch (SQLException e) {
             //TODO logging
             throw new RuntimeException(e);
+        }
+    }
+
+    public void closeAll() {
+        while (connectionPool.size() > 0)
+        {
+            Connection connection = connectionPool.pop();
+            try {
+                if (!connection.isClosed())
+                    connection.close();
+            } catch (SQLException e) {
+                //TODO logging
+                throw new RuntimeException(e);
+            }
         }
     }
 
